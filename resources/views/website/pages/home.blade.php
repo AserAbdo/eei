@@ -119,47 +119,29 @@
         <div class="row g-4 justify-content-center">
             @if(isset($category) && count($category) > 0)
                 @foreach($category as $item)
-                    <div class="col-lg-4 col-md-6">
-                        <div class="service-card-expand">
-                            {{-- Default State - White Card --}}
-                            <div class="service-card-default">
-                                <h3>{{ $item->name }}</h3>
-                                <p>{{ Str::limit($item->description, 100) }}</p>
-                                <a href="/category-details/{{ $item->id }}" class="service-link">
-                                    More About Service
-                                    <i class="bi bi-arrow-right"></i>
-                                </a>
+                    <div class="col-lg-4 col-md-6" style="overflow: visible;">
+                        <div class="service-card-wrapper">
+                            {{-- Main Card --}}
+                            <div class="service-card-main" style="--bg-image: url('{{ asset('storage/' . $item->image) }}');">
+                                <div class="service-card-content">
+                                    <h3>{{ $item->name }}</h3>
+                                    <p>{{ Str::limit($item->description, 100) }}</p>
+                                    <a href="/category-details/{{ $item->id }}" class="service-card-link">
+                                        More About Service
+                                        <i class="bi bi-arrow-right"></i>
+                                    </a>
+                                </div>
                             </div>
                             
-                            {{-- Hover State - Image + Red Panel --}}
-                            <div class="service-card-hover">
-                                {{-- Left: Image with content --}}
-                                <div class="service-hover-image" style="background-image: url('{{ asset('storage/' . $item->image) }}');">
-                                    <div class="service-hover-overlay"></div>
-                                    <div class="service-hover-content">
-                                        <h3>{{ $item->name }}</h3>
-                                        <p>{{ Str::limit($item->description, 80) }}</p>
-                                        <a href="/category-details/{{ $item->id }}" class="service-link-white">
-                                            More About Service
-                                            <i class="bi bi-arrow-right"></i>
+                            {{-- External Red Panel --}}
+                            <div class="service-panel-external">
+                                @if($item->services && count($item->services) > 0)
+                                    @foreach($item->services->take(5) as $service)
+                                        <a href="/service-details/{{ $service->id }}" class="panel-item">
+                                            {{ $service->name }}
                                         </a>
-                                    </div>
-                                </div>
-                                
-                                {{-- Right: Red Panel with Services --}}
-                                <div class="service-hover-panel">
-                                    @if($item->services && count($item->services) > 0)
-                                        <ul>
-                                            @foreach($item->services->take(5) as $service)
-                                                <li>
-                                                    <a href="/service-details/{{ $service->id }}">
-                                                        {{ $service->name }}
-                                                    </a>
-                                                </li>
-                                            @endforeach
-                                        </ul>
-                                    @endif
-                                </div>
+                                    @endforeach
+                                @endif
                             </div>
                         </div>
                     </div>

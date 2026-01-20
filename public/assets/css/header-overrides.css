@@ -38,14 +38,6 @@
 }
 
 /* =========================================
-   Primary Color Override - #f02418
-   ========================================= */
-:root {
-    --primary-red: #f02418 !important;
-    --primary-red-dark: #d01a12 !important;
-}
-
-/* =========================================
    Hero Title & Description Overrides
    ========================================= */
 .hero-content h1 {
@@ -58,7 +50,7 @@
     color: rgba(255, 255, 255, 0.85) !important;
 }
 
-/* Hero Button - bigger text, arrow at end */
+/* Hero Button */
 .btn-hero {
     font-size: 1.1rem !important;
     padding: 15px 25px !important;
@@ -76,7 +68,7 @@
     padding-left: 30px;
 }
 
-/* Carousel Indicators - Inactive is white */
+/* Carousel Indicators */
 .hero-section .carousel-indicators button {
     background: rgba(255, 255, 255, 1) !important;
     opacity: 0.7;
@@ -119,11 +111,6 @@
     color: #f02418 !important;
 }
 
-.who-are-we-section .link-arrow:hover {
-    color: #d01a12 !important;
-}
-
-/* Feature cards */
 .feature-card {
     background: #ffffff !important;
     border: 1px solid #f0f0f0;
@@ -134,18 +121,101 @@
 }
 
 /* =========================================
-   Service Cards - Curtain Hover Effect
+   Service Cards - Swipe with External Panel
    ========================================= */
-.service-card-curtain {
-    position: relative;
-    height: 450px;
-    border-radius: 12px;
-    overflow: hidden;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-    cursor: pointer;
+.services-section-new {
+    overflow: visible !important;
+    padding: 100px 0 !important;
 }
 
-.service-card-bg {
+.services-section-new .row {
+    overflow: visible !important;
+}
+
+.services-section-new .col-lg-4 {
+    overflow: visible !important;
+}
+
+.service-card-expand {
+    position: relative;
+    width: 100%;
+    height: 320px;
+    overflow: visible !important;
+}
+
+/* Default State - White Card */
+.service-card-default {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background: #ffffff;
+    border-radius: 20px;
+    padding: 40px 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+    transition: all 0.5s ease;
+    z-index: 2;
+}
+
+.service-card-expand:hover .service-card-default {
+    background-size: cover;
+    background-position: center;
+}
+
+.service-card-default h3 {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #1A1A2E;
+    margin-bottom: 15px;
+    transition: all 0.5s ease;
+}
+
+.service-card-default p {
+    color: #6B7280;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    transition: all 0.5s ease;
+}
+
+.service-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: #1A1A2E;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.5s ease;
+}
+
+/* On hover - card gets image background */
+.service-card-expand:hover .service-card-default {
+    background-color: transparent;
+}
+
+.service-card-expand:hover .service-card-default h3 {
+    color: #ffffff;
+}
+
+.service-card-expand:hover .service-card-default p {
+    color: rgba(255, 255, 255, 0.85);
+}
+
+.service-card-expand:hover .service-link {
+    color: #f02418;
+}
+
+/* Hover State Container */
+.service-card-hover {
+    display: none;
+}
+
+/* Image overlay on hover */
+.service-hover-image {
     position: absolute;
     top: 0;
     left: 0;
@@ -153,110 +223,89 @@
     height: 100%;
     background-size: cover;
     background-position: center;
-    transition: transform 0.5s ease;
-}
-
-.service-card-curtain:hover .service-card-bg {
-    transform: scale(1.1);
-}
-
-/* Red Curtain Overlay - slides from left */
-.service-card-curtain-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 0%;
-    height: 100%;
-    background: linear-gradient(135deg, #f02418 0%, #d01a12 100%);
-    transition: width 0.5s ease;
+    border-radius: 20px;
+    opacity: 0;
+    transition: opacity 0.5s ease;
     z-index: 1;
 }
 
-.service-card-curtain:hover .service-card-curtain-overlay {
-    width: 100%;
-}
-
-/* Content - hidden by default, shows on hover */
-.service-card-curtain-content {
+.service-hover-image::before {
+    content: '';
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    padding: 30px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    opacity: 0;
-    transform: translateX(-20px);
-    transition: all 0.5s ease 0.2s;
-    z-index: 2;
-    color: #ffffff;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0.7) 100%);
+    border-radius: 20px;
 }
 
-.service-card-curtain:hover .service-card-curtain-content {
+.service-card-expand:hover .service-hover-image {
     opacity: 1;
-    transform: translateX(0);
 }
 
-.service-card-curtain-content h3 {
-    font-size: 1.5rem;
-    font-weight: 700;
-    color: #ffffff;
-    margin-bottom: 15px;
+/* Red Panel - Slides OUT of the card */
+.service-hover-panel {
+    position: absolute;
+    top: 50%;
+    right: -180px;
+    /* Outside the card */
+    transform: translateY(-50%) translateX(20px);
+    width: 180px;
+    background: #f02418;
+    border-radius: 15px;
+    padding: 20px 15px;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.5s ease;
+    z-index: 10;
+    box-shadow: 0 8px 30px rgba(240, 36, 24, 0.3);
 }
 
-.service-card-curtain-content p {
-    font-size: 0.95rem;
-    color: rgba(255, 255, 255, 0.9);
-    line-height: 1.6;
-    margin-bottom: 20px;
+.service-card-expand:hover .service-hover-panel {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(-50%) translateX(0);
 }
 
-.service-list-curtain {
+.service-hover-panel ul {
     list-style: none;
     padding: 0;
-    margin: 0 0 20px 0;
+    margin: 0;
 }
 
-.service-list-curtain li {
-    padding: 6px 0;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-    font-size: 0.9rem;
+.service-hover-panel ul li {
+    padding: 10px 12px;
+    margin-bottom: 6px;
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 8px;
+    transition: all 0.3s ease;
 }
 
-.service-list-curtain li:last-child {
-    border-bottom: none;
+.service-hover-panel ul li:last-child {
+    margin-bottom: 0;
 }
 
-.service-list-curtain li a {
+.service-hover-panel ul li:hover {
+    background: rgba(255, 255, 255, 0.3);
+    transform: translateX(3px);
+}
+
+.service-hover-panel ul li a {
     color: #ffffff;
+    font-size: 0.85rem;
+    font-weight: 500;
     text-decoration: none;
-    transition: padding-left 0.3s ease;
+    display: block;
 }
 
-.service-list-curtain li a:hover {
-    padding-left: 10px;
+/* Hide the hover content div */
+.service-hover-content {
+    display: none;
 }
 
-.btn-curtain {
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-    color: #ffffff;
-    font-weight: 600;
-    text-decoration: none;
-    transition: gap 0.3s ease;
-    margin-top: auto;
-}
-
-.btn-curtain:hover {
-    gap: 15px;
-    color: #ffffff;
-}
-
-.btn-curtain i {
-    font-size: 1.1rem;
+.service-link-white {
+    display: none;
 }
 
 /* =========================================
@@ -278,4 +327,26 @@ body>section:first-of-type,
 .hero-section,
 #heroCarousel {
     margin-top: 0 !important;
+}
+
+/* =========================================
+   Responsive
+   ========================================= */
+@media (max-width: 992px) {
+    .service-hover-panel {
+        right: -150px;
+        width: 150px;
+        padding: 15px 12px;
+    }
+
+    .service-hover-panel ul li {
+        padding: 8px 10px;
+        font-size: 0.8rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .service-hover-panel {
+        display: none;
+    }
 }
