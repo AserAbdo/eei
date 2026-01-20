@@ -26,16 +26,17 @@
     <!-- Main CSS File -->
     <link href="{{ asset('assets/css/main.css') }}" rel="stylesheet">
     <link href="{{ asset('assets/css/custom3.css') }}" rel="stylesheet">
+    <link href="{{ asset('assets/css/figma-design.css') }}" rel="stylesheet">
+    <link href="{{ asset('assets/css/header-overrides.css') }}" rel="stylesheet">
     <link href="{{ asset('assets/css/responsive.css') }}" rel="stylesheet">
 
     <link rel="shortcut icon" href="{{ asset('assets/img/logo.svg') }}" type="image/x-icon">
     <title>EEI</title>
-    <header style="background: var(--main-color);">
-
-    </header>
     <style>
         body {
             overflow-x: hidden;
+            margin: 0;
+            padding: 0;
         }
     </style>
 </head>

@@ -1,0 +1,69 @@
+/* =========================================
+   Header/Navbar Overrides
+   ========================================= */
+.header {
+    padding: 20px 0 10px 0 !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+}
+
+.header .header-container {
+    border-radius: 10px !important;
+    padding: 8px 20px !important;
+    margin-top: 10px;
+}
+
+.header .btn-getstarted {
+    border-radius: 8px !important;
+    padding: 10px 25px !important;
+}
+
+/* =========================================
+   Hero Title & Description Overrides
+   ========================================= */
+.hero-content h1 {
+    font-style: normal !important;
+    /* Bold, not italic */
+    font-weight: 700 !important;
+}
+
+.hero-content p {
+    font-weight: 300 !important;
+    /* Thin/light font */
+    color: rgba(255, 255, 255, 0.85) !important;
+}
+
+/* Carousel Indicators - Inactive is white */
+.hero-section .carousel-indicators button {
+    background: rgba(255, 255, 255, 1) !important;
+    /* White inactive */
+    opacity: 0.7;
+}
+
+.hero-section .carousel-indicators button.active {
+    background: #E53935 !important;
+    /* Red active */
+    opacity: 1;
+}
+
+/* =========================================
+   Remove top space before hero
+   ========================================= */
+html,
+body {
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+.hero-section {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+    top: 0 !important;
+}
+
+body>section:first-of-type,
+.hero-section,
+#heroCarousel {
+    margin-top: 0 !important;
+}

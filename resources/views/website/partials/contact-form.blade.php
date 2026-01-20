@@ -1,120 +1,91 @@
-<div class="contact" style="background-repeat: no-repeat; background-size: cover;">
-    <div class="container" >
-        <div class="row container" style="margin-top: 20%; padding-top: 8%; padding-bottom: 5%; transform: scale(.9);">
-            <?php
-            $settings = App\Models\Setting::find(1);
-            ?>
-            <div class="col-lg-6
-            col-sm-12
-            " style="margin-bottom: 25px;">
-                <h4
-                    style="font-size: 36px; font-weight: 700; line-height: 48px; color: rgba(255, 255, 255, 1);
-             display: flex; justify-content: start; align-items: start; padding-bottom: 20px;">
-                    Contact Us</h4>
+{{-- =========================================
+    Contact Section - Figma Design
+    ========================================= --}}
+@php
+    $settings = App\Models\Setting::find(1);
+@endphp
 
-                <ul>
-
-                    <div style="display: flex; padding: 10px;">
-                        <div><img src="{{ asset('assets/img/location_1.svg') }}" alt=""
-                                style="width: 25px; height: 25px;">
-                        </div>
-                        <div
-                            style="font-size: 18px; font-weight: 300; line-height: 32px; color: rgba(255, 255, 255, 1); padding-left: 10px;">
-                            {{ $settings->address }}</div>
-                    </div>
-
-                    <div style="display: flex; padding: 10px;">
-                        <div><img src="{{ asset('assets/img/phone.svg') }}" alt=""
-                                style="width: 25px; height: 25px;"></div>
-                        <div
-                            style="font-size: 18px; font-weight: 300; line-height: 32px; color: rgba(255, 255, 255, 1); padding-left: 10px;">
-                            {{ $settings->phone }}</div>
-                    </div>
-
-                    <div style="display: flex; padding: 10px;">
-                        <div><img src="{{ asset('assets/img/email.svg') }}" alt=""
-                                style="width: 25px; height: 25px;"></div>
-                        <div
-                            style="font-size: 18px; font-weight: 300; line-height: 32px; color: rgba(255, 255, 255, 1); padding-left: 10px;">
-                            {{ $settings->email }}</div>
-
-                    </div>
-
-                </ul>
-
-            </div>
-            <style>
-                .contact .contact-form {
-                    padding: 20px !important;
-                    /* max-width: auto; */
-                    width: 130%;
-                    /* min-width: 350px; */
-                }
-
-                .contact {
-                    background-image: url({{ asset('storage/' . $settings->footer) }});
-                }
-
-                @media (max-width: 715px) {
-                    .contact .contact-form {
-                        width: 350px;
-                    }
-                }
-            </style>
-
-            <div class="col-lg-6 col-sm-12">
-                <h4
-                    style="font-size: 36px; font-weight: 700; line-height: 48px; color: rgba(255, 255, 255, 1); padding-bottom: 20px;">
-                    Send us a question</h4>
-                <div class="contact-form container">
-
-
-                    <div class="box-contact m-3">
-                        <div class="d-flex justify-content-center items-center gap-4">
-                        <div class="w-100">
-                            <label for="exampleFormControlInput1" class="form-label">Name</label>
-                            <input type="text" class="form-control" id="exampleFormControlInput1"
-                                placeholder="i.e. John Doe">
-                        </div>
-
-
-                        <div class="w-100">
-                            <label for="exampleFormControlInput1" class="form-label">Email</label>
-                            <input type="email" class="form-control" id="exampleFormControlInput1"
-                                placeholder="i.e. john@mail.com">
+<section class="contact-section-new">
+    <div class="container">
+        <div class="row align-items-start">
+            {{-- Contact Info --}}
+            <div class="col-lg-5 mb-4 mb-lg-0">
+                <div class="contact-info">
+                    <h2>Contact US</h2>
+                    
+                    <div class="contact-item">
+                        <i class="bi bi-geo-alt-fill"></i>
+                        <div class="contact-item-text">
+                            <h5>Address</h5>
+                            <p>{{ $settings->address ?? 'Your Address Here' }}</p>
                         </div>
                     </div>
-                    <div class="d-flex justify-content-center items-center gap-4 mt-4">
-
-                        <div class="w-100">
-                            <label for="exampleFormControlInput1" class="form-label">Phone </label>
-                            <input type="phone" class="form-control" id="exampleFormControlInput1"
-                                placeholder="i.e. 123-456-7890">
+                    
+                    <div class="contact-item">
+                        <i class="bi bi-telephone-fill"></i>
+                        <div class="contact-item-text">
+                            <h5>Phone</h5>
+                            <p>{{ $settings->phone ?? '+1234567890' }}</p>
                         </div>
-
-
-                        <div class=" w-100">
-                            <label for="exampleFormControlInput1" class="form-label"> Your Question </label>
-                            <input type="text" class="form-control" id="exampleFormControlInput1"
-                                placeholder="Write Your Question ">
-                        </div>
-                        </div>
-
-                        <div class="mt-4">
-                            <div class="botton-sub">
-                                <button type="submit" class="btn btn-primary d-flex justify-content-center items-center"
-                                    style="width: 100%; border: none; background-color:rgba(225, 44, 33, 1) ; height: 50px; ">send</button>
-                            </div>
-
-                        </div>
-
                     </div>
-
-
+                    
+                    <div class="contact-item">
+                        <i class="bi bi-envelope-fill"></i>
+                        <div class="contact-item-text">
+                            <h5>Email</h5>
+                            <p>{{ $settings->email ?? 'info@eei.com' }}</p>
+                        </div>
+                    </div>
                 </div>
             </div>
-
-
+            
+            {{-- Contact Form --}}
+            <div class="col-lg-7">
+                <div class="contact-form-box">
+                    <h4>Send us a question</h4>
+                    <form action="#" method="POST">
+                        @csrf
+                        <div class="row">
+                            <div class="col-md-6">
+                                <input type="text" 
+                                       class="form-control form-control-custom" 
+                                       name="name"
+                                       placeholder="i.e. John Doe" 
+                                       required>
+                            </div>
+                            <div class="col-md-6">
+                                <input type="email" 
+                                       class="form-control form-control-custom" 
+                                       name="email"
+                                       placeholder="i.e. john@mail.com" 
+                                       required>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <input type="tel" 
+                                       class="form-control form-control-custom" 
+                                       name="phone"
+                                       placeholder="i.e. 123-456-7890">
+                            </div>
+                            <div class="col-md-6">
+                                <input type="text" 
+                                       class="form-control form-control-custom" 
+                                       name="subject"
+                                       placeholder="Subject">
+                            </div>
+                        </div>
+                        <textarea class="form-control form-control-custom" 
+                                  name="message"
+                                  rows="4" 
+                                  placeholder="Write your message here..."
+                                  required></textarea>
+                        <button type="submit" class="btn-submit">
+                            Send Message
+                        </button>
+                    </form>
+                </div>
+            </div>
         </div>
     </div>
-</div>
+</section>

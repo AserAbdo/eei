@@ -2,12 +2,13 @@
 $category = App\Models\Category::with(['services'])->get();
 ?>
 <header id="header" class="header d-flex align-items-center fixed-top">
-    <div class="header-container container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
+    <div class="header-container container-fluid container-xl position-relative d-flex align-items-center">
 
-        <a href="/" class="logo d-flex align-items-center me-auto me-xl-0">
+        <a href="/" class="logo d-flex align-items-center">
             <img src="{{ asset('assets/img/logo.svg') }}" alt="img" />
         </a>
-        <nav id="navmenu" class="navmenu">
+        
+        <nav id="navmenu" class="navmenu ms-4">
             <ul>
                 <li><a href="/" class="">Home</a></li>
                 <li><a href="/about">About</a></li>
@@ -32,9 +33,9 @@ $category = App\Models\Category::with(['services'])->get();
                 <li><a href="/contact">Contact Us</a></li>
             </ul>
         </nav>
-        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
-
-        <a class="btn-getstarted bg-danger" href="/services">Get Services</a>
+        
+        <i class="mobile-nav-toggle d-xl-none bi bi-list ms-auto"></i>
+        <a class="btn-getstarted bg-danger ms-auto d-none d-xl-inline-block" href="/services">Get Services</a>
 
     </div>
 </header>

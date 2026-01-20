@@ -1,11 +1,13 @@
 @include('website.partials.head-links')
-@include('website.partials.navabar')
 
 <body>
+    @include('website.partials.navabar')
+    
     @yield('content')
 
     @include('website.partials.contact-form')
     @include('website.partials.footer')
+    
+    @include('website.partials.scripts')
 </body>
-
-@include('website.partials.scripts')
+</html>

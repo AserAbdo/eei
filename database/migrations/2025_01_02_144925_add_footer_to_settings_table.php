@@ -12,7 +12,9 @@ return new class extends Migration
     public function up(): void
     {
         Schema::table('settings', function (Blueprint $table) {
-            $table->string('footer')->nullable();
+            if (!Schema::hasColumn('settings', 'footer')) {
+                $table->string('footer')->nullable();
+            }
         });
     }
 
