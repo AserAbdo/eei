@@ -23,31 +23,26 @@
 }
 
 .navmenu ul li a:hover {
-    color: #B71C1C !important;
-    /* Deep red on hover */
+    color: #f02418 !important;
 }
 
-/* Get Service button - more circular, deep red */
+/* Get Service button - more circular */
 .header .btn-getstarted {
     border-radius: 25px !important;
     padding: 10px 28px !important;
-    background-color: #B71C1C !important;
-    /* Deep red */
+    background-color: #f02418 !important;
 }
 
 .header .btn-getstarted:hover {
-    background-color: #8B0000 !important;
-    /* Darker red on hover */
+    background-color: #d01a12 !important;
 }
 
 /* =========================================
-   Primary Color Override - Deep Red
+   Primary Color Override - #f02418
    ========================================= */
 :root {
-    --primary-red: #B71C1C !important;
-    /* Deep red */
-    --primary-red-dark: #8B0000 !important;
-    /* Darker red */
+    --primary-red: #f02418 !important;
+    --primary-red-dark: #d01a12 !important;
 }
 
 /* =========================================
@@ -63,17 +58,17 @@
     color: rgba(255, 255, 255, 0.85) !important;
 }
 
-/* Hero Button - bigger text, arrow at end, deep red */
+/* Hero Button - bigger text, arrow at end */
 .btn-hero {
     font-size: 1.1rem !important;
     padding: 15px 25px !important;
     justify-content: space-between !important;
     min-width: 250px;
-    background: #B71C1C !important;
+    background: #f02418 !important;
 }
 
 .btn-hero:hover {
-    background: #8B0000 !important;
+    background: #d01a12 !important;
 }
 
 .btn-hero i {
@@ -88,13 +83,12 @@
 }
 
 .hero-section .carousel-indicators button.active {
-    background: #B71C1C !important;
-    /* Deep red */
+    background: #f02418 !important;
     opacity: 1;
 }
 
 /* =========================================
-   Who Are We Section Fixes
+   Who Are We Section
    ========================================= */
 .who-are-we-section {
     padding: 80px 0 !important;
@@ -104,7 +98,6 @@
 
 .who-are-we-section::before {
     display: none !important;
-    /* Remove the gray background shape */
 }
 
 .who-are-we-section .section-title {
@@ -114,8 +107,7 @@
 }
 
 .who-are-we-section .section-title::after {
-    background: #B71C1C !important;
-    /* Deep red underline */
+    background: #f02418 !important;
 }
 
 .who-are-we-section .section-text {
@@ -124,11 +116,11 @@
 }
 
 .who-are-we-section .link-arrow {
-    color: #B71C1C !important;
+    color: #f02418 !important;
 }
 
 .who-are-we-section .link-arrow:hover {
-    color: #8B0000 !important;
+    color: #d01a12 !important;
 }
 
 /* Feature cards */
@@ -138,8 +130,133 @@
 }
 
 .feature-icon {
-    background: #B71C1C !important;
-    /* Deep red icons */
+    background: #f02418 !important;
+}
+
+/* =========================================
+   Service Cards - Curtain Hover Effect
+   ========================================= */
+.service-card-curtain {
+    position: relative;
+    height: 450px;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    cursor: pointer;
+}
+
+.service-card-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    transition: transform 0.5s ease;
+}
+
+.service-card-curtain:hover .service-card-bg {
+    transform: scale(1.1);
+}
+
+/* Red Curtain Overlay - slides from left */
+.service-card-curtain-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0%;
+    height: 100%;
+    background: linear-gradient(135deg, #f02418 0%, #d01a12 100%);
+    transition: width 0.5s ease;
+    z-index: 1;
+}
+
+.service-card-curtain:hover .service-card-curtain-overlay {
+    width: 100%;
+}
+
+/* Content - hidden by default, shows on hover */
+.service-card-curtain-content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    opacity: 0;
+    transform: translateX(-20px);
+    transition: all 0.5s ease 0.2s;
+    z-index: 2;
+    color: #ffffff;
+}
+
+.service-card-curtain:hover .service-card-curtain-content {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.service-card-curtain-content h3 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 15px;
+}
+
+.service-card-curtain-content p {
+    font-size: 0.95rem;
+    color: rgba(255, 255, 255, 0.9);
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.service-list-curtain {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 20px 0;
+}
+
+.service-list-curtain li {
+    padding: 6px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    font-size: 0.9rem;
+}
+
+.service-list-curtain li:last-child {
+    border-bottom: none;
+}
+
+.service-list-curtain li a {
+    color: #ffffff;
+    text-decoration: none;
+    transition: padding-left 0.3s ease;
+}
+
+.service-list-curtain li a:hover {
+    padding-left: 10px;
+}
+
+.btn-curtain {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    color: #ffffff;
+    font-weight: 600;
+    text-decoration: none;
+    transition: gap 0.3s ease;
+    margin-top: auto;
+}
+
+.btn-curtain:hover {
+    gap: 15px;
+    color: #ffffff;
+}
+
+.btn-curtain i {
+    font-size: 1.1rem;
 }
 
 /* =========================================

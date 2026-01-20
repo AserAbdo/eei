@@ -83,21 +83,21 @@
         <div class="feature-cards">
             <div class="feature-card">
                 <div class="feature-icon">
-                    {!! $settings->feature1_icon ?? '<i class="bi bi-shield-check"></i>' !!}
+                    {!! $settings->feature1_icon ?? '<i class="bi bi-check-lg"></i>' !!}
                 </div>
                 <h4>{{ $settings->feature1_title ?? 'Unwavering Safety' }}</h4>
                 <p>{{ $settings->feature1_desc ?? 'We prioritize safety in every product and service we deliver.' }}</p>
             </div>
             <div class="feature-card">
                 <div class="feature-icon">
-                    {!! $settings->feature2_icon ?? '<i class="bi bi-award"></i>' !!}
+                    {!! $settings->feature2_icon ?? '<i class="bi bi-check-lg"></i>' !!}
                 </div>
                 <h4>{{ $settings->feature2_title ?? 'Contactless Assurance' }}</h4>
                 <p>{{ $settings->feature2_desc ?? 'Modern solutions with minimal physical contact required.' }}</p>
             </div>
             <div class="feature-card">
                 <div class="feature-icon">
-                    {!! $settings->feature3_icon ?? '<i class="bi bi-lightning-charge"></i>' !!}
+                    {!! $settings->feature3_icon ?? '<i class="bi bi-check-lg"></i>' !!}
                 </div>
                 <h4>{{ $settings->feature3_title ?? 'Operational Efficiency' }}</h4>
                 <p>{{ $settings->feature3_desc ?? 'Maximizing performance while minimizing resource usage.' }}</p>
@@ -116,34 +116,50 @@
             <p>{{ $settings->services ?? 'We provide comprehensive electrical solutions tailored to meet the diverse needs of our clients. Our services span across various sectors including industrial, commercial, and residential applications.' }}</p>
         </div>
         
-        <div class="row g-4">
+        <div class="row g-4 justify-content-center">
             @if(isset($category) && count($category) > 0)
                 @foreach($category as $item)
                     <div class="col-lg-4 col-md-6">
-                        <div class="service-card-new">
-                            <div class="service-card-image">
-                                <img src="{{ asset('storage/' . $item->image) }}" alt="{{ $item->name }}">
-                            </div>
-                            <div class="service-card-content">
+                        <div class="service-card-expand">
+                            {{-- Default State - White Card --}}
+                            <div class="service-card-default">
                                 <h3>{{ $item->name }}</h3>
                                 <p>{{ Str::limit($item->description, 100) }}</p>
-                                
-                                @if($item->services && count($item->services) > 0)
-                                    <ul class="service-list">
-                                        @foreach($item->services->take(3) as $service)
-                                            <li>
-                                                <a href="/service-details/{{ $service->id }}" style="color: inherit; text-decoration: none;">
-                                                    {{ $service->name }}
-                                                </a>
-                                            </li>
-                                        @endforeach
-                                    </ul>
-                                @endif
-                                
-                                <a href="/category-details/{{ $item->id }}" class="link-arrow">
+                                <a href="/category-details/{{ $item->id }}" class="service-link">
                                     More About Service
                                     <i class="bi bi-arrow-right"></i>
                                 </a>
+                            </div>
+                            
+                            {{-- Hover State - Image + Red Panel --}}
+                            <div class="service-card-hover">
+                                {{-- Left: Image with content --}}
+                                <div class="service-hover-image" style="background-image: url('{{ asset('storage/' . $item->image) }}');">
+                                    <div class="service-hover-overlay"></div>
+                                    <div class="service-hover-content">
+                                        <h3>{{ $item->name }}</h3>
+                                        <p>{{ Str::limit($item->description, 80) }}</p>
+                                        <a href="/category-details/{{ $item->id }}" class="service-link-white">
+                                            More About Service
+                                            <i class="bi bi-arrow-right"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                                
+                                {{-- Right: Red Panel with Services --}}
+                                <div class="service-hover-panel">
+                                    @if($item->services && count($item->services) > 0)
+                                        <ul>
+                                            @foreach($item->services->take(5) as $service)
+                                                <li>
+                                                    <a href="/service-details/{{ $service->id }}">
+                                                        {{ $service->name }}
+                                                    </a>
+                                                </li>
+                                            @endforeach
+                                        </ul>
+                                    @endif
+                                </div>
                             </div>
                         </div>
                     </div>
