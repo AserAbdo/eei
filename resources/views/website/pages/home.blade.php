@@ -12,7 +12,7 @@
             <div class="carousel-item active">
                 <img src="{{ asset('storage/' . ($settings->slider1 ?? 'placeholder.jpg')) }}" alt="Hero Image">
                 <div class="hero-content">
-                    <h1><em>Egyptian Company fo</em><br><em>Electrical Industries</em></h1>
+                    <h1>Egyptian Company fo<br>Electrical Industries</h1>
                     <p>{{ $settings->description ?? 'With lots of unique blocks, you can easily build a page without coding. Build your next consultancy website within few minutes.' }}</p>
                     <a href="#Services" class="btn-hero">
                         Explorer Our services
@@ -24,7 +24,7 @@
             <div class="carousel-item">
                 <img src="{{ asset('storage/' . ($settings->slider2 ?? 'placeholder.jpg')) }}" alt="Hero Image">
                 <div class="hero-content">
-                    <h1><em>Egyptian Company fo</em><br><em>Electrical Industries</em></h1>
+                    <h1>Egyptian Company fo<br>Electrical Industries</h1>
                     <p>{{ $settings->description ?? 'With lots of unique blocks, you can easily build a page without coding. Build your next consultancy website within few minutes.' }}</p>
                     <a href="#Services" class="btn-hero">
                         Explorer Our services

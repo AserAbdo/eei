@@ -14,9 +14,40 @@
     margin-top: 10px;
 }
 
+/* Navbar links - black and bold */
+.navmenu ul li a,
+.navmenu ul li a:focus,
+#navmenu ul li a {
+    color: #000000 !important;
+    font-weight: 600 !important;
+}
+
+.navmenu ul li a:hover {
+    color: #B71C1C !important;
+    /* Deep red on hover */
+}
+
+/* Get Service button - more circular, deep red */
 .header .btn-getstarted {
-    border-radius: 8px !important;
-    padding: 10px 25px !important;
+    border-radius: 25px !important;
+    padding: 10px 28px !important;
+    background-color: #B71C1C !important;
+    /* Deep red */
+}
+
+.header .btn-getstarted:hover {
+    background-color: #8B0000 !important;
+    /* Darker red on hover */
+}
+
+/* =========================================
+   Primary Color Override - Deep Red
+   ========================================= */
+:root {
+    --primary-red: #B71C1C !important;
+    /* Deep red */
+    --primary-red-dark: #8B0000 !important;
+    /* Darker red */
 }
 
 /* =========================================
@@ -24,27 +55,91 @@
    ========================================= */
 .hero-content h1 {
     font-style: normal !important;
-    /* Bold, not italic */
     font-weight: 700 !important;
 }
 
 .hero-content p {
     font-weight: 300 !important;
-    /* Thin/light font */
     color: rgba(255, 255, 255, 0.85) !important;
+}
+
+/* Hero Button - bigger text, arrow at end, deep red */
+.btn-hero {
+    font-size: 1.1rem !important;
+    padding: 15px 25px !important;
+    justify-content: space-between !important;
+    min-width: 250px;
+    background: #B71C1C !important;
+}
+
+.btn-hero:hover {
+    background: #8B0000 !important;
+}
+
+.btn-hero i {
+    margin-left: auto;
+    padding-left: 30px;
 }
 
 /* Carousel Indicators - Inactive is white */
 .hero-section .carousel-indicators button {
     background: rgba(255, 255, 255, 1) !important;
-    /* White inactive */
     opacity: 0.7;
 }
 
 .hero-section .carousel-indicators button.active {
-    background: #E53935 !important;
-    /* Red active */
+    background: #B71C1C !important;
+    /* Deep red */
     opacity: 1;
+}
+
+/* =========================================
+   Who Are We Section Fixes
+   ========================================= */
+.who-are-we-section {
+    padding: 80px 0 !important;
+    background: #ffffff !important;
+    overflow: visible !important;
+}
+
+.who-are-we-section::before {
+    display: none !important;
+    /* Remove the gray background shape */
+}
+
+.who-are-we-section .section-title {
+    color: #1A1A2E !important;
+    font-size: 2.5rem !important;
+    font-weight: 700 !important;
+}
+
+.who-are-we-section .section-title::after {
+    background: #B71C1C !important;
+    /* Deep red underline */
+}
+
+.who-are-we-section .section-text {
+    color: #6B7280 !important;
+    line-height: 1.8 !important;
+}
+
+.who-are-we-section .link-arrow {
+    color: #B71C1C !important;
+}
+
+.who-are-we-section .link-arrow:hover {
+    color: #8B0000 !important;
+}
+
+/* Feature cards */
+.feature-card {
+    background: #ffffff !important;
+    border: 1px solid #f0f0f0;
+}
+
+.feature-icon {
+    background: #B71C1C !important;
+    /* Deep red icons */
 }
 
 /* =========================================

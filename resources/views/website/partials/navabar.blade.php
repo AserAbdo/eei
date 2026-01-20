@@ -11,7 +11,7 @@ $category = App\Models\Category::with(['services'])->get();
         <nav id="navmenu" class="navmenu ms-4">
             <ul>
                 <li><a href="/" class="">Home</a></li>
-                <li><a href="/about">About</a></li>
+                <li><a href="/about">About Us</a></li>
                 <li class="dropdown"><a href="#Services"><span>Services</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
                     <ul>
                         @if (count($category) > 0)
@@ -35,7 +35,7 @@ $category = App\Models\Category::with(['services'])->get();
         </nav>
         
         <i class="mobile-nav-toggle d-xl-none bi bi-list ms-auto"></i>
-        <a class="btn-getstarted bg-danger ms-auto d-none d-xl-inline-block" href="/services">Get Services</a>
+        <a class="btn-getstarted bg-danger ms-auto d-none d-xl-inline-block" href="/services">Get Service</a>
 
     </div>
 </header>
