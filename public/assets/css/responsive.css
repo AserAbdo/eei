@@ -1,0 +1,41 @@
+@media (max-width: 580px) {
+    .respon {
+        width: 320px !important;
+    }
+}
+
+@media (max-width: 680px) {
+    .card {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 320px;
+
+    }
+    .card-img-top {
+        width: 320px;
+    }
+}
+
+@media (max-width: 850px) {
+    .cate-box {
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .text-cate {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .text-cate h3, .text-cate h5 {
+        text-align: center;
+    }
+
+    .img-cate {
+        margin-top: 25px;
+    }
+}
+
