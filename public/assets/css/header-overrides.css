@@ -14,7 +14,6 @@
     margin-top: 10px;
 }
 
-/* Navbar links - black and bold */
 .navmenu ul li a,
 .navmenu ul li a:focus,
 #navmenu ul li a {
@@ -26,7 +25,6 @@
     color: #f02418 !important;
 }
 
-/* Get Service button - more circular */
 .header .btn-getstarted {
     border-radius: 25px !important;
     padding: 10px 28px !important;
@@ -38,7 +36,7 @@
 }
 
 /* =========================================
-   Hero Title & Description Overrides
+   Hero
    ========================================= */
 .hero-content h1 {
     font-style: normal !important;
@@ -50,7 +48,6 @@
     color: rgba(255, 255, 255, 0.85) !important;
 }
 
-/* Hero Button */
 .btn-hero {
     font-size: 1.1rem !important;
     padding: 15px 25px !important;
@@ -68,7 +65,6 @@
     padding-left: 30px;
 }
 
-/* Carousel Indicators */
 .hero-section .carousel-indicators button {
     background: rgba(255, 255, 255, 1) !important;
     opacity: 0.7;
@@ -121,191 +117,454 @@
 }
 
 /* =========================================
-   Service Cards - Swipe with External Panel
+   Services Section - Figma Exact Design
    ========================================= */
 .services-section-new {
+    position: relative;
     overflow: visible !important;
     padding: 100px 0 !important;
+    background: #f8fafc;
 }
 
+.services-decor-left {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 200px;
+    height: 400px;
+    background: linear-gradient(180deg, #d1dce8 0%, #e8eef4 100%);
+    border-radius: 0 200px 200px 0;
+    opacity: 0.6;
+    z-index: 0;
+}
+
+.services-decor-dots {
+    position: absolute;
+    left: 30px;
+    top: 100px;
+    width: 80px;
+    height: 120px;
+    background-image: radial-gradient(circle, #1a3a5c 2px, transparent 2px);
+    background-size: 12px 12px;
+    opacity: 0.4;
+    z-index: 1;
+}
+
+.services-section-new .container,
 .services-section-new .row {
     overflow: visible !important;
+    position: relative;
+    z-index: 2;
+}
+
+.services-section-new .section-header {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.services-section-new .section-header .section-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #1a1a2e;
+    margin-bottom: 20px;
+}
+
+.services-section-new .section-header .section-title::after {
+    display: none;
+}
+
+.services-section-new .section-header p {
+    max-width: 800px;
+    margin: 0 auto;
+    color: #6b7280;
+    line-height: 1.7;
 }
 
 .services-section-new .col-lg-4 {
     overflow: visible !important;
-}
-
-.service-card-expand {
     position: relative;
-    width: 100%;
-    height: 320px;
-    overflow: visible !important;
-}
-
-/* Default State - White Card */
-.service-card-default {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    background: #ffffff;
-    border-radius: 20px;
-    padding: 40px 30px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
-    transition: all 0.5s ease;
-    z-index: 2;
-}
-
-.service-card-expand:hover .service-card-default {
-    background-size: cover;
-    background-position: center;
-}
-
-.service-card-default h3 {
-    font-size: 1.4rem;
-    font-weight: 700;
-    color: #1A1A2E;
-    margin-bottom: 15px;
-    transition: all 0.5s ease;
-}
-
-.service-card-default p {
-    color: #6B7280;
-    font-size: 0.95rem;
-    line-height: 1.6;
-    margin-bottom: 20px;
-    transition: all 0.5s ease;
-}
-
-.service-link {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    color: #1A1A2E;
-    font-weight: 600;
-    text-decoration: none;
-    transition: all 0.5s ease;
-}
-
-/* On hover - card gets image background */
-.service-card-expand:hover .service-card-default {
-    background-color: transparent;
-}
-
-.service-card-expand:hover .service-card-default h3 {
-    color: #ffffff;
-}
-
-.service-card-expand:hover .service-card-default p {
-    color: rgba(255, 255, 255, 0.85);
-}
-
-.service-card-expand:hover .service-link {
-    color: #f02418;
-}
-
-/* Hover State Container */
-.service-card-hover {
-    display: none;
-}
-
-/* Image overlay on hover */
-.service-hover-image {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-size: cover;
-    background-position: center;
-    border-radius: 20px;
-    opacity: 0;
-    transition: opacity 0.5s ease;
     z-index: 1;
 }
 
-.service-hover-image::before {
+.services-section-new .col-lg-4:hover {
+    z-index: 100 !important;
+}
+
+.service-card-wrapper {
+    position: relative;
+    overflow: visible !important;
+    z-index: 1;
+}
+
+.service-card-wrapper:hover {
+    z-index: 100 !important;
+}
+
+.service-card-main {
+    position: relative;
+    background: #ffffff;
+    border-radius: 24px;
+    padding: 50px 30px;
+    text-align: center;
+    box-shadow: 0 4px 25px rgba(0, 0, 0, 0.05);
+    transition: all 0.4s ease;
+    z-index: 2;
+    min-height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.service-card-main::before {
     content: '';
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(180deg, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0.7) 100%);
-    border-radius: 20px;
+    background-image: var(--bg-image);
+    background-size: cover;
+    background-position: center;
+    border-radius: 24px;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    z-index: -2;
 }
 
-.service-card-expand:hover .service-hover-image {
+.service-card-main::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.8) 100%);
+    border-radius: 24px;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    z-index: -1;
+}
+
+.service-card-wrapper:hover .service-card-main::before,
+.service-card-wrapper:hover .service-card-main::after {
     opacity: 1;
 }
 
-/* Red Panel - Slides OUT of the card */
-.service-hover-panel {
+.service-card-wrapper:hover .service-card-main {
+    background: transparent;
+}
+
+.service-card-content {
+    position: relative;
+    z-index: 3;
+}
+
+.service-card-content h3 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #1A1A2E;
+    margin-bottom: 15px;
+    transition: color 0.4s ease;
+}
+
+.service-card-content p {
+    color: #6B7280;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 25px;
+    transition: color 0.4s ease;
+}
+
+.service-card-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: #1A1A2E;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.4s ease;
+}
+
+.service-card-wrapper:hover .service-card-content h3 {
+    color: #ffffff;
+}
+
+.service-card-wrapper:hover .service-card-content p {
+    color: rgba(255, 255, 255, 0.85);
+}
+
+.service-card-wrapper:hover .service-card-link {
+    color: #f02418;
+}
+
+.service-panel-external {
     position: absolute;
     top: 50%;
-    right: -180px;
-    /* Outside the card */
-    transform: translateY(-50%) translateX(20px);
+    right: 0;
+    transform: translateY(-50%) translateX(0);
     width: 180px;
     background: #f02418;
-    border-radius: 15px;
-    padding: 20px 15px;
+    border-radius: 16px;
+    padding: 15px 12px;
     opacity: 0;
     visibility: hidden;
-    transition: all 0.5s ease;
-    z-index: 10;
-    box-shadow: 0 8px 30px rgba(240, 36, 24, 0.3);
+    transition: all 0.4s ease;
+    z-index: 999 !important;
+    box-shadow: 0 10px 40px rgba(240, 36, 24, 0.35);
 }
 
-.service-card-expand:hover .service-hover-panel {
+.service-card-wrapper:hover .service-panel-external {
     opacity: 1;
     visibility: visible;
-    transform: translateY(-50%) translateX(0);
+    transform: translateY(-50%) translateX(calc(100% + 15px));
 }
 
-.service-hover-panel ul {
+.panel-item {
+    display: block;
+    padding: 12px 15px;
+    margin-bottom: 6px;
+    background: rgba(255, 255, 255, 0.18);
+    border-radius: 10px;
+    color: #ffffff;
+    font-size: 0.9rem;
+    font-weight: 500;
+    text-decoration: none;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.panel-item:last-child {
+    margin-bottom: 0;
+}
+
+.panel-item:hover {
+    background: rgba(255, 255, 255, 0.35);
+    color: #ffffff;
+}
+
+.btn-show-more {
+    display: inline-block;
+    background: #f02418;
+    color: #ffffff;
+    padding: 16px 60px;
+    border-radius: 30px;
+    font-weight: 600;
+    font-size: 1rem;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 20px rgba(240, 36, 24, 0.3);
+}
+
+.btn-show-more:hover {
+    background: #d01a12;
+    color: #ffffff;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 30px rgba(240, 36, 24, 0.4);
+}
+
+/* =========================================
+   Why EEI Section - Figma Design
+   ========================================= */
+.why-eei-section-new {
+    padding: 80px 0;
+    background: #ffffff;
+}
+
+.why-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #1A1A2E;
+    margin-bottom: 15px;
+}
+
+.why-description {
+    color: #6B7280;
+    font-size: 1rem;
+    line-height: 1.7;
+    margin-bottom: 30px;
+}
+
+.why-check-list {
     list-style: none;
     padding: 0;
     margin: 0;
 }
 
-.service-hover-panel ul li {
-    padding: 10px 12px;
-    margin-bottom: 6px;
-    background: rgba(255, 255, 255, 0.15);
+.why-check-list li {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 18px;
+}
+
+.why-check-list .check-icon {
+    width: 28px;
+    height: 28px;
+    min-width: 28px;
+    background: #f02418;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ffffff;
+    font-size: 0.9rem;
+}
+
+.why-check-list .check-text {
+    color: #1A1A2E;
+    font-size: 0.95rem;
+}
+
+.why-image-box {
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+}
+
+.why-image-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* =========================================
+   Contact Section - Figma Design
+   ========================================= */
+.contact-section-figma {
+    position: relative;
+    padding: 80px 0;
+    background: #0D1B2A;
+    color: #ffffff;
+    overflow: hidden;
+}
+
+/* Decorative dots */
+.contact-decor-dots {
+    position: absolute;
+    left: 50px;
+    top: 50px;
+    width: 100px;
+    height: 150px;
+    background-image: radial-gradient(circle, rgba(255, 255, 255, 0.3) 1px, transparent 1px);
+    background-size: 15px 15px;
+}
+
+.contact-decor-stars {
+    position: absolute;
+    right: 100px;
+    top: 30%;
+    width: 200px;
+    height: 200px;
+    background-image:
+        radial-gradient(circle, rgba(255, 255, 255, 0.4) 1px, transparent 1px),
+        radial-gradient(circle, rgba(255, 255, 255, 0.2) 2px, transparent 2px);
+    background-size: 30px 30px, 50px 50px;
+    background-position: 0 0, 15px 15px;
+}
+
+.contact-title {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 40px;
+}
+
+.contact-info-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+.contact-icon {
+    width: 45px;
+    height: 45px;
+    min-width: 45px;
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ffffff;
+    font-size: 1.1rem;
+}
+
+.contact-text p {
+    margin: 0;
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+.contact-text p strong {
+    color: #ffffff;
+}
+
+.form-title {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 25px;
+}
+
+.contact-form-card {
+    background: #ffffff;
+    border-radius: 16px;
+    padding: 35px;
+}
+
+.form-group-custom {
+    margin-bottom: 20px;
+}
+
+.form-group-custom label {
+    display: block;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #1A1A2E;
+    margin-bottom: 8px;
+}
+
+.form-group-custom input,
+.form-group-custom textarea {
+    width: 100%;
+    border: 1px solid #E5E7EB;
     border-radius: 8px;
+    padding: 12px 15px;
+    font-size: 0.95rem;
+    color: #1A1A2E;
     transition: all 0.3s ease;
 }
 
-.service-hover-panel ul li:last-child {
-    margin-bottom: 0;
+.form-group-custom input::placeholder,
+.form-group-custom textarea::placeholder {
+    color: #9CA3AF;
 }
 
-.service-hover-panel ul li:hover {
-    background: rgba(255, 255, 255, 0.3);
-    transform: translateX(3px);
+.form-group-custom input:focus,
+.form-group-custom textarea:focus {
+    outline: none;
+    border-color: #f02418;
+    box-shadow: 0 0 0 3px rgba(240, 36, 24, 0.1);
 }
 
-.service-hover-panel ul li a {
+.btn-talk-expert {
+    width: 100%;
+    background: #f02418;
     color: #ffffff;
-    font-size: 0.85rem;
-    font-weight: 500;
-    text-decoration: none;
-    display: block;
+    border: none;
+    border-radius: 8px;
+    padding: 15px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
 }
 
-/* Hide the hover content div */
-.service-hover-content {
-    display: none;
-}
-
-.service-link-white {
-    display: none;
+.btn-talk-expert:hover {
+    background: #d01a12;
 }
 
 /* =========================================
@@ -333,20 +592,47 @@ body>section:first-of-type,
    Responsive
    ========================================= */
 @media (max-width: 992px) {
-    .service-hover-panel {
-        right: -150px;
-        width: 150px;
-        padding: 15px 12px;
+    .services-decor-left {
+        width: 120px;
+        height: 250px;
     }
 
-    .service-hover-panel ul li {
-        padding: 8px 10px;
-        font-size: 0.8rem;
+    .service-panel-external {
+        width: 160px;
+        padding: 12px 10px;
+    }
+
+    .panel-item {
+        padding: 10px 12px;
+        font-size: 0.85rem;
+    }
+
+    .why-title {
+        font-size: 2rem;
+    }
+
+    .contact-title {
+        font-size: 1.6rem;
     }
 }
 
 @media (max-width: 768px) {
-    .service-hover-panel {
+
+    .services-decor-left,
+    .services-decor-dots {
         display: none;
+    }
+
+    .service-panel-external {
+        display: none;
+    }
+
+    .contact-decor-dots,
+    .contact-decor-stars {
+        display: none;
+    }
+
+    .why-image-box {
+        margin-top: 40px;
     }
 }

@@ -110,10 +110,14 @@
     Our Services Section
     ========================================= --}}
 <section class="services-section-new" id="Services">
+    {{-- Decorative Elements --}}
+    <div class="services-decor-left"></div>
+    <div class="services-decor-dots"></div>
+    
     <div class="container">
         <div class="section-header">
             <h2 class="section-title">Our Services</h2>
-            <p>{{ $settings->services ?? 'We provide comprehensive electrical solutions tailored to meet the diverse needs of our clients. Our services span across various sectors including industrial, commercial, and residential applications.' }}</p>
+            <p>{{ $settings->services ?? 'With lots of unique blocks, you can easily build a page without coding. Build your next landing page. With lots of unique blocks, you can easily build a page without coding. Build your next landing page. With lots of unique blocks, you can easily build a page without coding. Build your next landing page.' }}</p>
         </div>
         
         <div class="row g-4 justify-content-center">
@@ -152,43 +156,63 @@
                 </div>
             @endif
         </div>
+        
+        {{-- Show More Details Button --}}
+        <div class="text-center mt-5">
+            <a href="/services" class="btn-show-more">Show More Details</a>
+        </div>
     </div>
 </section>
 
 {{-- =========================================
     Why EEI Section
     ========================================= --}}
-<section class="why-eei-section">
+<section class="why-eei-section-new">
     <div class="container">
         <div class="row align-items-center">
             <div class="col-lg-6">
-                <h2 class="section-title">Why eei</h2>
-                <p class="section-text">
-                    {{ $settings->why_eei_desc ?? 'EEI stands as a trusted leader in the electrical industry, delivering quality products and exceptional service for decades.' }}
+                <h2 class="why-title">Why eei</h2>
+                <p class="why-description">
+                    {{ $settings->why_eei_desc ?? 'Dui consectetur gravida platea ut dis diam. Enim morbi proin auctor et nisl phasellus. Ultricies pharetra, id quam facilisis urna, enim.' }}
                 </p>
-                <ul class="check-list">
+                <ul class="why-check-list">
                     @if(isset($settings->why_eei_points) && $settings->why_eei_points)
                         @foreach(explode("\n", $settings->why_eei_points) as $point)
                             @if(trim($point))
                                 <li>
-                                    <i class="bi bi-check-circle-fill"></i>
-                                    <span>{{ str_replace('- ', '', trim($point)) }}</span>
+                                    <span class="check-icon"><i class="bi bi-check"></i></span>
+                                    <span class="check-text">{{ str_replace('- ', '', trim($point)) }}</span>
                                 </li>
                             @endif
                         @endforeach
                     @else
-                        <li><i class="bi bi-check-circle-fill"></i><span>Free Consulting With Expert Saving Money</span></li>
-                        <li><i class="bi bi-check-circle-fill"></i><span>High Quality Products and Materials</span></li>
-                        <li><i class="bi bi-check-circle-fill"></i><span>Customer-centric problem-solving culture</span></li>
-                        <li><i class="bi bi-check-circle-fill"></i><span>Saving Money For The Future</span></li>
+                        <li>
+                            <span class="check-icon"><i class="bi bi-check"></i></span>
+                            <span class="check-text">Free Consulting With Expert Saving Money</span>
+                        </li>
+                        <li>
+                            <span class="check-icon"><i class="bi bi-check"></i></span>
+                            <span class="check-text">Dui consectetur gravida platea ut dis diam. proin auctor</span>
+                        </li>
+                        <li>
+                            <span class="check-icon"><i class="bi bi-check"></i></span>
+                            <span class="check-text">Dui consectetur gravida plat</span>
+                        </li>
+                        <li>
+                            <span class="check-icon"><i class="bi bi-check"></i></span>
+                            <span class="check-text">Saving Money For The Future</span>
+                        </li>
+                        <li>
+                            <span class="check-icon"><i class="bi bi-check"></i></span>
+                            <span class="check-text">Dui consectetur gravida plat</span>
+                        </li>
                     @endif
                 </ul>
             </div>
             <div class="col-lg-6">
-                <div class="why-image">
+                <div class="why-image-box">
                     <img src="{{ asset('storage/' . ($settings->why_eei_image ?? 'placeholder.jpg')) }}" 
-                         alt="Why EEI" 
-                         class="img-fluid rounded-4">
+                         alt="Why EEI">
                 </div>
             </div>
         </div>

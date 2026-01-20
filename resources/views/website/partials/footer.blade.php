@@ -18,20 +18,6 @@
                     Egyptian Company for Electrical Industries - Your trusted partner in electrical solutions, 
                     providing high-quality products and services since establishment.
                 </p>
-                <div class="footer-social">
-                    @if($settings && $settings->facebook)
-                        <a href="{{ $settings->facebook }}" target="_blank"><i class="bi bi-facebook"></i></a>
-                    @endif
-                    @if($settings && $settings->instagram)
-                        <a href="{{ $settings->instagram }}" target="_blank"><i class="bi bi-instagram"></i></a>
-                    @endif
-                    @if($settings && $settings->linkedin)
-                        <a href="{{ $settings->linkedin }}" target="_blank"><i class="bi bi-linkedin"></i></a>
-                    @endif
-                    @if($settings && $settings->youtube)
-                        <a href="{{ $settings->youtube }}" target="_blank"><i class="bi bi-youtube"></i></a>
-                    @endif
-                </div>
             </div>
             
             {{-- Company Links --}}
