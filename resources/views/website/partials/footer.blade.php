@@ -9,36 +9,24 @@
 <footer class="footer-new">
     <div class="container">
         <div class="row">
-            {{-- Logo & Description --}}
-            <div class="col-lg-4 col-md-6 mb-4">
-                <div class="footer-logo">
-                    <img src="{{ asset('assets/img/logo.svg') }}" alt="EEI Logo">
-                </div>
-                <p class="footer-text">
-                    Egyptian Company for Electrical Industries - Your trusted partner in electrical solutions, 
-                    providing high-quality products and services since establishment.
-                </p>
-            </div>
-            
             {{-- Company Links --}}
-            <div class="col-lg-2 col-md-6 mb-4">
+            <div class="col-lg-2 col-md-4 mb-4">
                 <div class="footer-links">
-                    <h5>Company</h5>
+                    <h5 class="footer-heading">Company</h5>
                     <ul>
                         <li><a href="/about">About us</a></li>
                         <li><a href="/contact">Contact us</a></li>
                         <li><a href="/certificate">Certificates</a></li>
-                        <li><a href="/services">Services</a></li>
                     </ul>
                 </div>
             </div>
             
             {{-- Services Links --}}
-            <div class="col-lg-3 col-md-6 mb-4">
+            <div class="col-lg-3 col-md-4 mb-4">
                 <div class="footer-links">
-                    <h5>Services</h5>
+                    <h5 class="footer-heading">Services</h5>
                     <ul>
-                        @foreach($categories->take(5) as $category)
+                        @foreach($categories->take(3) as $category)
                             <li><a href="/category-details/{{ $category->id }}">{{ $category->name }}</a></li>
                         @endforeach
                     </ul>
@@ -46,25 +34,25 @@
             </div>
             
             {{-- Contact Info --}}
-            <div class="col-lg-3 col-md-6 mb-4">
+            <div class="col-lg-3 col-md-4 mb-4">
                 <div class="footer-links">
-                    <h5>Contact Us</h5>
-                    <ul>
+                    <h5 class="footer-heading">Contact us</h5>
+                    <ul class="footer-contact-simple">
                         @if($settings)
-                            <li>
-                                <i class="bi bi-envelope me-2 text-danger"></i>
-                                {{ $settings->email ?? 'info@eei.com' }}
-                            </li>
-                            <li>
-                                <i class="bi bi-telephone me-2 text-danger"></i>
-                                {{ $settings->phone ?? '+1234567890' }}
-                            </li>
-                            <li>
-                                <i class="bi bi-geo-alt me-2 text-danger"></i>
-                                {{ $settings->address ?? 'Address' }}
-                            </li>
+                            <li>{{ $settings->email ?? 'info@eei.com.eg' }}</li>
+                            <li>0020 {{ $settings->phone ?? '01144508585' }}</li>
+                        @else
+                            <li>info@eei.com.eg</li>
+                            <li>0020 01144508585</li>
                         @endif
                     </ul>
+                </div>
+            </div>
+            
+            {{-- Logo on Right --}}
+            <div class="col-lg-4 col-md-12 mb-4 text-lg-end">
+                <div class="footer-logo-right">
+                    <img src="{{ asset('assets/img/logo.svg') }}" alt="EEI Logo">
                 </div>
             </div>
         </div>

@@ -79,7 +79,7 @@
    Who Are We Section
    ========================================= */
 .who-are-we-section {
-    padding: 80px 0 !important;
+    padding: 60px 0 !important;
     background: #ffffff !important;
     overflow: visible !important;
 }
@@ -95,7 +95,7 @@
 }
 
 .who-are-we-section .section-title::after {
-    background: #f02418 !important;
+    display: none !important;
 }
 
 .who-are-we-section .section-text {
@@ -224,7 +224,9 @@
     width: 100%;
     height: 100%;
     background-image: var(--bg-image);
-    background-size: cover;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: left center;
     background-position: center;
     border-radius: 24px;
     opacity: 0;
@@ -433,34 +435,45 @@
    ========================================= */
 .contact-section-figma {
     position: relative;
-    padding: 80px 0;
-    background: #0D1B2A;
+    padding: 50px 0;
+    background: #0D1B2A url('../img/New Screen.png') no-repeat center center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: left center;
     color: #ffffff;
     overflow: hidden;
 }
 
-/* Decorative dots */
-.contact-decor-dots {
+.contact-section-figma::before {
+    content: '';
     position: absolute;
-    left: 50px;
-    top: 50px;
-    width: 100px;
-    height: 150px;
-    background-image: radial-gradient(circle, rgba(255, 255, 255, 0.3) 1px, transparent 1px);
-    background-size: 15px 15px;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(13, 27, 42, 0.85);
+    z-index: 0;
 }
 
-.contact-decor-stars {
+.contact-section-figma .container {
+    position: relative;
+    z-index: 1;
+}
+
+.contact-decor-right-img {
     position: absolute;
-    right: 100px;
-    top: 30%;
-    width: 200px;
-    height: 200px;
-    background-image:
-        radial-gradient(circle, rgba(255, 255, 255, 0.4) 1px, transparent 1px),
-        radial-gradient(circle, rgba(255, 255, 255, 0.2) 2px, transparent 2px);
-    background-size: 30px 30px, 50px 50px;
-    background-position: 0 0, 15px 15px;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 150px;
+    opacity: 0.5;
+    z-index: 0;
+}
+
+.contact-decor-right-img img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
 }
 
 .contact-title {
@@ -489,6 +502,14 @@
     justify-content: center;
     color: #ffffff;
     font-size: 1.1rem;
+}
+.contact-icon-simple {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ffffff;
+    font-size: 2rem;
+    min-width: 40px;
 }
 
 .contact-text p {
@@ -627,8 +648,8 @@ body>section:first-of-type,
         display: none;
     }
 
-    .contact-decor-dots,
-    .contact-decor-stars {
+    .contact-decor-left-img,
+    .contact-decor-right-img {
         display: none;
     }
 
@@ -636,3 +657,7 @@ body>section:first-of-type,
         margin-top: 40px;
     }
 }
+
+
+
+

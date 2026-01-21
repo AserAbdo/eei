@@ -152,25 +152,19 @@
     font-size: 2.8rem;
     font-weight: 800;
     color: var(--text-dark);
-    margin-bottom: 25px;
+    margin-bottom: 10px;
     position: relative;
 }
 
 .section-title::after {
-    content: '';
-    display: block;
-    width: 60px;
-    height: 4px;
-    background: var(--primary-red);
-    margin-top: 15px;
-    border-radius: 2px;
+    display: none;
 }
 
 .section-text {
     color: var(--text-muted);
     font-size: 1rem;
     line-height: 1.8;
-    margin-bottom: 25px;
+    margin-bottom: 15px;
 }
 
 .link-arrow {
@@ -257,222 +251,14 @@
 
 .section-header {
     text-align: center;
-    margin-bottom: 60px;
+    margin-bottom: 30px;
 }
 
 .section-header .section-title {
-    margin-bottom: 20px;
-}
-
-.section-header .section-title::after {
-    margin: 15px auto 0;
-}
-
-.section-header p {
-    max-width: 700px;
-    margin: 0 auto;
-    color: var(--text-muted);
-    line-height: 1.7;
-}
-
-.service-card-new {
-    background: var(--white);
-    border-radius: var(--border-radius);
-    overflow: hidden;
-    box-shadow: var(--shadow-light);
-    transition: var(--transition);
-    height: 100%;
-}
-
-.service-card-new:hover {
-    transform: translateY(-10px);
-    box-shadow: var(--shadow-medium);
-}
-
-.service-card-image {
-    position: relative;
-    height: 220px;
-    overflow: hidden;
-}
-
-.service-card-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: var(--transition);
-}
-
-.service-card-new:hover .service-card-image img {
-    transform: scale(1.1);
-}
-
-.service-card-content {
-    padding: 25px;
-}
-
-.service-card-content h3 {
-    font-size: 1.3rem;
-    font-weight: 700;
+    font-size: 2.8rem;
+    font-weight: 800;
     color: var(--text-dark);
-    margin-bottom: 15px;
-}
-
-.service-card-content p {
-    color: var(--text-muted);
-    font-size: 0.95rem;
-    line-height: 1.6;
-    margin-bottom: 20px;
-}
-
-.service-card-content .link-arrow {
-    font-size: 0.95rem;
-}
-
-/* Service List */
-.service-list {
-    list-style: none;
-    padding: 0;
-    margin: 0 0 20px 0;
-}
-
-.service-list li {
-    padding: 8px 0;
-    border-bottom: 1px solid #eee;
-    color: var(--text-muted);
-    font-size: 0.9rem;
-}
-
-.service-list li:last-child {
-    border-bottom: none;
-}
-
-/* =========================================
-   Why EEI Section
-   ========================================= */
-.why-eei-section {
-    padding: 100px 0;
-    background: var(--white);
-}
-
-.check-list {
-    list-style: none;
-    padding: 0;
-    margin: 30px 0;
-}
-
-.check-list li {
-    display: flex;
-    align-items: flex-start;
-    gap: 15px;
-    margin-bottom: 18px;
-    color: var(--text-dark);
-    font-size: 1rem;
-}
-
-.check-list li i {
-    color: var(--primary-red);
-    font-size: 1.2rem;
-    margin-top: 3px;
-}
-
-.why-image {
-    border-radius: var(--border-radius);
-    overflow: hidden;
-    box-shadow: var(--shadow-medium);
-}
-
-.why-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-/* =========================================
-   FAQ Section
-   ========================================= */
-.faq-section {
-    padding: 100px 0;
-    background: var(--light-gray);
-}
-
-.faq-section .section-header {
-    margin-bottom: 50px;
-}
-
-.accordion-custom .accordion-item {
-    background: var(--white);
-    border: none;
-    border-radius: var(--border-radius) !important;
-    margin-bottom: 15px;
-    box-shadow: var(--shadow-light);
-    overflow: hidden;
-}
-
-.accordion-custom .accordion-button {
-    background: var(--white);
-    color: var(--text-dark);
-    font-weight: 600;
-    font-size: 1rem;
-    padding: 20px 25px;
-    border: none;
-    box-shadow: none;
-}
-
-.accordion-custom .accordion-button:not(.collapsed) {
-    background: var(--white);
-    color: var(--primary-red);
-    box-shadow: none;
-}
-
-.accordion-custom .accordion-button::after {
-    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23E53935'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
-}
-
-.accordion-custom .accordion-body {
-    padding: 0 25px 20px;
-    color: var(--text-muted);
-    line-height: 1.7;
-}
-
-/* =========================================
-   Contact Section
-   ========================================= */
-.contact-section-new {
-    padding: 80px 0;
-    background: var(--dark-navy);
-    color: var(--white);
-}
-
-.contact-info h2 {
-    font-size: 1.8rem;
-    font-weight: 700;
-    margin-bottom: 30px;
-    color: var(--white);
-}
-
-.contact-item {
-    display: flex;
-    align-items: flex-start;
-    gap: 15px;
-    margin-bottom: 25px;
-}
-
-.contact-item i {
-    width: 45px;
-    height: 45px;
-    background: rgba(255, 255, 255, 0.1);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: var(--primary-red);
-    font-size: 1.1rem;
-}
-
-.contact-item-text h5 {
-    font-size: 0.9rem;
-    color: rgba(255, 255, 255, 0.6);
-    margin-bottom: 5px;
+    margin-bottom: 10px;
     font-weight: 400;
 }
 
@@ -531,7 +317,8 @@
    Footer
    ========================================= */
 .footer-new {
-    background: #F8FAFC;
+    background: #F8FAFC url('../img/footer.png') no-repeat center center;
+    background-size: cover;
     padding: 60px 0 0;
 }
 
@@ -670,4 +457,29 @@
     .section-title {
         font-size: 1.6rem;
     }
+}
+
+
+.footer-heading {
+    color: #E53935 !important;
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.footer-logo-right {
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-start;
+}
+
+.footer-logo-right img {
+    max-width: 180px;
+}
+
+.footer-contact-simple li {
+    list-style: none;
+    color: var(--text-muted);
+    margin-bottom: 8px;
+    font-size: 0.95rem;
 }

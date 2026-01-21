@@ -6,9 +6,6 @@
 @endphp
 
 <section class="contact-section-figma">
-    {{-- Decorative elements --}}
-    <div class="contact-decor-dots"></div>
-    <div class="contact-decor-stars"></div>
     
     <div class="container">
         <div class="row align-items-start">
@@ -17,8 +14,8 @@
                 <h2 class="contact-title">Contact US</h2>
                 
                 <div class="contact-info-item">
-                    <div class="contact-icon">
-                        <i class="bi bi-geo-alt"></i>
+                    <div class="contact-icon-simple">
+                        <i class="bi bi-geo-alt-fill"></i>
                     </div>
                     <div class="contact-text">
                         <p>Factory :10th of Ramadan city<br>Egypt</p>
@@ -26,17 +23,17 @@
                 </div>
                 
                 <div class="contact-info-item">
-                    <div class="contact-icon">
-                        <i class="bi bi-telephone"></i>
+                    <div class="contact-icon-simple">
+                        <i class="bi bi-telephone-fill"></i>
                     </div>
                     <div class="contact-text">
-                        <p><strong>0020</strong> {{ $settings->phone ?? '01144508585' }}</p>
+                        <p><strong>0020</strong> +2 {{ $settings->phone ?? '01144508585' }}</p>
                     </div>
                 </div>
                 
                 <div class="contact-info-item">
-                    <div class="contact-icon">
-                        <i class="bi bi-envelope"></i>
+                    <div class="contact-icon-simple">
+                        <i class="bi bi-envelope-fill"></i>
                     </div>
                     <div class="contact-text">
                         <p>{{ $settings->email ?? 'info@eei.com.eg' }}</p>
